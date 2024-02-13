@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LED Control</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      form {
+        display: flex;
+        justify-content: space-between;
+        width: 300px; /* Set a fixed width for the form */
+      }
+      p {
+        font-size: 150%;
+      }
+      button {
+        width: 100%;
+        margin: 30px; /* Add some space between buttons */
+        background-color: #0077ff; /* Default background color */
+        color: #fff; /* Default text color */
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      button:active {
+        background-color: #b30000; /* Change background color on click */
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>LED Control</h1>
+
+    <form action="/control-led" method="post">
+      <button type="submit" name="action" value="on">Turn On</button>
+      <button type="submit" name="action" value="off">Turn Off</button>
+    </form>
+    <!-- Display message if available -->
+    <% if (message) { %>
+    <p><%= message %></p>
+    <% } %>
+  </body>
+</html>
